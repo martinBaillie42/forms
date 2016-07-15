@@ -1,0 +1,7 @@
+mixin inputAndLabel(type)
+  .group
+    - if (type === 'submit')
+      input(type="#{type}", id="#{type}" )
+    - else
+      label(for="#{type}") #{type}
+      input(type="#{type}", id="#{type}", name="#{type}" )
