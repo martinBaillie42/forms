@@ -11,5 +11,5 @@ module.exports.standardInputs = function(req, res, next) {
 };
 
 module.exports.dummySubmit = function(req, res, next) {
-    sendJsonResponse( res, 200, { 'status': 'success' });
+    res.redirect('back');
 };
