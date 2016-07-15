@@ -3,15 +3,77 @@ extends layout
 include _includes/sharedHTMLfunctions
 
 block content
-  h1= title
 
-  form(action="/dummy-submit", method="post")
+  form(action="/dummy-submit", method="post" autocomplete="on", id="main_form")
     fieldset
       legend Standard Inputs
-      +inputs("text", "text")
-      +inputs("checkbox", "checkbox")
-      +inputs("password", "password")
-      +inputs("reset", "reset")
-      +inputs("text_disabled", "text")(disabled)
+      +inputs("text")
+      +inputs("checkbox")
+      +inputs("password")
+      +inputs("reset")
+      +inputs("text")(id="disabled", disabled)
+      +inputs("radio")(id="radio_1", value="radio_1", checked)
+      +inputs("radio")(id="radio_2", value="radio_2" )
+      +inputs("text")(id="maxlength", maxlength="5")
+      +inputs("text")(id="readonly", readonly, value="readonly")
+      +inputs("text")(id="size", size="5")
 
-      +inputs("submit", "submit")
+      +inputs("submit")(id="submit_1")
+    fieldset
+      legend IE10 and above
+      +inputs("email")
+      +inputs("number")
+      +inputs("number")(id="step", step="2")
+      +inputs("range")(min="20", max="50", step="2")
+      +inputs("search")
+      +inputs("tel")
+      +inputs("url")
+      +inputs("text")(id="autofocus", autofocus)
+
+      +inputs("submit")(id="formaction", formaction="/dummy-submit-formaction")
+      // formenctype: other values are "multipart/form-data" and "text/plain"
+      +inputs("submit")(id="formenctype", formenctype="application/x-www-form-urlencoded")
+      +inputs("submit")(id="formmethod", formmethod="get")
+      // formtarget: other values are "_self", "_parent" and "_top"
+      +inputs("submit")(id="formtarget", formtarget="_blank")
+      // requires comma between emails
+      +inputs("email")(id="multiple_email", multiple)
+
+      +inputs("tel")(id="tel_pattern", pattern="[0-9]*")
+      +inputs("text")(id="placeholder", placeholder="placeholder")
+      +inputs("text")(id="spellcheck", spellcheck="true")
+
+      +inputs("submit")(id="submit_2")
+
+    fieldset
+      legend IE?
+      +inputs("number")(id="max", max="5")
+      +inputs("number")(id="min", min="2")
+
+      +inputs("submit")(id="submit_3")
+
+  form(action="/dummy-submit", method="post" autocomplete="on" id="sub_form")
+    fieldset
+      legend Not in IE11 or Edge 13
+      +inputs("text")(id="form_input", form="main_form")
+
+  form(action="/dummy-submit", method="post" autocomplete="on" id="x_minlength_form")
+    fieldset
+      legend x? minlength
+      +inputs("text")(id="minlength", minlength="2")
+      +inputs("submit")(id="submit_4")
+
+  form(action="/dummy-submit", method="post" enctype="multipart/form-data" id="x_file_form")
+    fieldset
+      legend All Browsers?
+      +inputs("file")(id="file", accepts=".docx")
+      +inputs("submit")(id="submit_5")
+
+  form(action="/dummy-submit", method="post" enctype="multipart/form-data" id="x_file_multiple_form")
+    fieldset
+      legend IE10 and above
+      +inputs("file")(id="multiple_file", multiple)
+      +inputs("submit")(id="submit_6")
+
+
+

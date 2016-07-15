@@ -1,7 +1,9 @@
-mixin inputs(nameIdFor, type)
+mixin inputs(type)
   .group
-    - if (type === 'submit')
-      input(type="#{type}", id="#{typnameIdFor}" )
-    - else
-      label(for="#{nameIdFor}") #{nameIdFor}
-      input(type="#{type}", id="#{nameIdFor}", name="#{nameIdFor}")&attributes(attributes)
+      label(for=attributes.id || "#{type}")= attributes.id || type
+      - if (type === 'submit' || type === 'reset')
+        input(type="#{type}", id=attributes.id || "#{type}" )&attributes(attributes)
+      - else if (type === 'radio')
+        input(type="#{type}", id=attributes.id || "#{type}", name="#{type}" value=attributes.id)&attributes(attributes)
+      - else
+        input(type="#{type}", id=attributes.id || "#{type}", name=attributes.id || "#{type}" )&attributes(attributes)
