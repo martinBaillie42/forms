@@ -10,7 +10,9 @@ input {
     float: right;
 }
 
-/* updated clearfix from CSS tricks */
+/* updated clearfix from CSS tricks
+https://css-tricks.com/snippets/css/clear-fix/
+*/
 .group:after {
   content: "";
   display: table;

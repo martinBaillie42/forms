@@ -8,6 +8,5 @@ module.exports.standardInputs = function(req, res, next) {
 module.exports.dummySubmit = function ( req, res, next ) {
     console.log( '### BEGIN FORM FIELDS' );
     console.log( req.body );
-    console.log( '### END FORM FIELDS' );
     res.redirect('back');
 };

@@ -8,6 +8,10 @@ block content
   form(action="/dummy-submit", method="post")
     fieldset
       legend Standard Inputs
-      +inputAndLabel("text")
-      +inputAndLabel("password")
-      +inputAndLabel("submit")
+      +inputs("text", "text")
+      +inputs("checkbox", "checkbox")
+      +inputs("password", "password")
+      +inputs("reset", "reset")
+      +inputs("text_disabled", "text")(disabled)
+
+      +inputs("submit", "submit")

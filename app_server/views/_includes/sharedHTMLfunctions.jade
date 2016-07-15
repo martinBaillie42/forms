@@ -1,7 +1,7 @@
-mixin inputAndLabel(type)
+mixin inputs(nameIdFor, type)
   .group
     - if (type === 'submit')
-      input(type="#{type}", id="#{type}" )
+      input(type="#{type}", id="#{typnameIdFor}" )
     - else
-      label(for="#{type}") #{type}
-      input(type="#{type}", id="#{type}", name="#{type}" )
+      label(for="#{nameIdFor}") #{nameIdFor}
+      input(type="#{type}", id="#{nameIdFor}", name="#{nameIdFor}")&attributes(attributes)
