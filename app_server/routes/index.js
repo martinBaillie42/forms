@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var ctrlForms = require('../controllers/forms');
+var htmlTests = require('../controllers/html_tests');
 
-/* Locations pages */
-router.get('/', ctrlForms.standardInputs);
-router.post('/dummy-submit', ctrlForms.dummySubmit);
-router.post('/dummy-submit-formaction', ctrlForms.dummySubmit);
-router.get('/dummy-submit', ctrlForms.dummySubmit);
+/* HTML test pages */
+router.get('/', htmlTests.mainMenu);
+router.get('/standard-inputs', htmlTests.standardInputs);
+router.post('/dummy-submit', htmlTests.dummySubmit);
+router.post('/dummy-submit-formaction', htmlTests.dummySubmit);
+router.get('/dummy-submit', htmlTests.dummySubmit);
 
 module.exports = router;

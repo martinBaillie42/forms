@@ -1,7 +1,13 @@
 /* GET 'Home' page */
 module.exports.standardInputs = function(req, res, next) {
-    res.render('index', {
+    res.render('standard_inputs', {
         title: 'Standard Inputs'
+    });
+};
+
+module.exports.mainMenu = function(req, res, next) {
+    res.render('main_menu', {
+        title: 'Main Menu'
     });
 };
 
