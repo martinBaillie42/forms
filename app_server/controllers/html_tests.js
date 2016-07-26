@@ -1,7 +1,7 @@
 /* GET 'Home' page */
-module.exports.standardInputs = function(req, res, next) {
-    res.render('standard_inputs', {
-        title: 'Standard Inputs'
+module.exports.forms = function(req, res, next) {
+    res.render('forms', {
+        title: 'Forms'
     });
 };
 

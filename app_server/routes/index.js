@@ -4,7 +4,7 @@ var htmlTests = require('../controllers/html_tests');
 
 /* HTML test pages */
 router.get('/', htmlTests.mainMenu);
-router.get('/standard-inputs', htmlTests.standardInputs);
+router.get('/forms', htmlTests.forms);
 router.post('/dummy-submit', htmlTests.dummySubmit);
 router.post('/dummy-submit-formaction', htmlTests.dummySubmit);
 router.get('/dummy-submit', htmlTests.dummySubmit);
