@@ -10,6 +10,28 @@ input {
     float: right;
 }
 
+h2 {
+    margin: 0;
+    font-size: 16px;
+}
+
+pre {
+    margin: 0;
+    overflow-y: auto;
+    padding-bottom: 6px;
+    tab-size:2;
+    -moz-tab-size: 2;
+    -o-tab-size:  2;
+}
+
+.inline {
+    display: inline;
+}
+
+p {
+    margin: 0.5em 0;
+}
+
 /* updated clearfix from CSS tricks
 https://css-tricks.com/snippets/css/clear-fix/
 */
@@ -17,4 +39,9 @@ https://css-tricks.com/snippets/css/clear-fix/
   content: "";
   display: table;
   clear: both;
+}
+
+/* Inline Semantics */
+.explanation {
+    color: blue;
 }

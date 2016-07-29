@@ -1,0 +1,60 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+
+  h1= title
+
+  div
+    //- h2 <pre><code>&lt;a&gt;</code></pre>
+    h2
+      +preCode("<a>")
+    a(href="/", target="_blank") Main Menu
+    &nbsp;
+    span.explanation (Download attribute may also be useful - but only Edge 13+. Not in Safari)
+  div
+    h2
+      +preCode("<abbr>")
+    abbr(title="H.T.M.L.") HTML
+    &nbsp;
+    span.explanation abbr tag. Provides tooltip and assistance to screenreaders.
+  div
+    h2
+      +preCode("<b>")
+    span This article describes several <b>text-level</b> elements. It explains their usage in an <b>HTML</b> document.
+    &nbsp;
+    span.explanation The bold tag. Text that is stylistically different. No meaning. Use if strong, em or mark tags don't fit.
+  div
+    h2
+      +preCode("<br>")
+    span A line <br> break
+  div
+    h2
+      +preCode("<cite>")
+    span More information can be found in <cite>[ISO-0000]</cite>.
+    &nbsp;
+    span.explanation A reference to a creative work. Title or reference, which may be in an abbreviated form according to the conventions used for the addition of citation metadata.
+  div
+    h2
+      +preCode("<dfn>")
+    p Example:
+    +preCode("<!-- Define \"The Internet\" -->\n<p><dfn id=\"def-internet\">The Internet</dfn> is a global system of interconnected networks that use the Internet Protocol Suite (TCP/IP) to serve billions of users worldwide.</p>")
+    p Later in the same document:
+    +preCode("<dl>\n\t<!-- Define \"World-Wide Web\" and reference definition for \"the Internet\" -->\n\t\t<dt>\n\t\t\t<dfn>\n\t\t\t\t<abbr title=\"World-Wide Web\">WWW</abbr>\n\t\t\t</dfn>\n\t\t</dt>\n\t<dd>The World-Wide Web (WWW) is a system of interlinked hypertext documents accessed on <a href=\"#def-internet\">the Internet</a>.</dd>\n</dl>")
+    p Also:
+    +preCode("<p><dfn title=\"HyperText Markup Language\">HTML</dfn> is the standard markup language for creating web pages.</p>")
+    ul.explanation
+      li The #[+preCodeInline("<dfn>")] element marks the term being defined; the definition of the term should be given by the surrounding #[+preCodeInline("<p>")], #[+preCodeInline("<section>")]
+        | &nbsp;or definition list group (usually a #[+preCodeInline("<dt>")], #[+preCodeInline("<dd>")] pair).
+      li The exact value of the term being defined is determined by the following rules:
+        ol
+          li If the #[+preCodeInline("<dfn>")] element has a title attribute, then the term is the value of that attribute.
+          li Else, if it contains only an #[+preCodeInline("<abbr>")] element with a title attribute, then the term is the value of that attribute.
+          li Otherwise, the text content of the #[+preCodeInline("<dfn>")] element is the term being defined.
+
+
+
+
+
+

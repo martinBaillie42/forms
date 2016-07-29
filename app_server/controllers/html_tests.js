@@ -17,6 +17,12 @@ module.exports.tables = function(req, res, next) {
     });
 };
 
+module.exports.inlineSemantics = function(req, res, next) {
+    res.render('inline_semantics', {
+        title: 'Inline Semantics'
+    });
+};
+
 module.exports.dummySubmit = function ( req, res, next ) {
     console.log( '### BEGIN FORM FIELDS' );
     console.log( req.body );
